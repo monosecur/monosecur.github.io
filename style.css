@@ -3,6 +3,9 @@
     padding: 0;
     font-family: 'Roboto Mono', monospace;
 }
+
+/* INDEX */
+
 .header{
     min-height: 100vh;
     width: 100%;
@@ -84,9 +87,12 @@ nav img{
 nav .fa-sharp{
     display: none;
 }
+nav .fa-solid{
+    display: block;
+}
 
 @media(max-width: 700px){
-    .text-box h1{
+    /*.text-box h1{
         font-size: 50px;
     }
     .nav-links{
@@ -113,9 +119,35 @@ nav .fa-sharp{
         color: #fff;
         font-size: 22px;
         cursor: pointer;
-        
     }
     .hero-btn{
         font-size: 6px;
+    }*/
+    .nav-links{
+        display: none;
     }
+    .hero-btn{
+        display: none;
+    }
+
+
+}
+
+/* REGISTRATION */
+
+.hero{
+    height: 100%;
+    width: 100%;
+    background-color: #CAEEC2;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.form-box{
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
 }
