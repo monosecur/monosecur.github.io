@@ -165,7 +165,7 @@ nav .fa-solid{
 .hero{
     height: 100%;
     width: 100%;
-    background-color: blueviolet;
+    background-color: rgba(4,9,30,0.7);
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -175,9 +175,11 @@ nav .fa-solid{
     height: 480px;
     position: relative;
     margin: 6% auto;
-    background: #fff;
+    background: #CAEEC2;
     padding: 5px;
     overflow: hidden;
+    border-radius: 30px;
+    top: -75px;
 }
 .button-box{
     width: 220px;
@@ -193,6 +195,7 @@ nav .fa-solid{
     border: 0;
     outline: none;
     position: relative;
+    font-size: 12px;
 }
 #btn{
     top: 0;
@@ -200,7 +203,7 @@ nav .fa-solid{
     position: absolute;
     width: 110px;
     height: 100%;
-    background-color: #f44336;
+    background-color: blueviolet;
     border-radius: 30px;
     transition: 0.5s;
 }
@@ -227,7 +230,7 @@ nav .fa-solid{
     cursor: pointer;
     display: block;
     margin: auto;
-    background-color: #f44336;
+    background-color: blueviolet;
     border: 0;
     outline: none;
     border-radius: 30px;
