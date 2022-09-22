@@ -17,9 +17,9 @@
     <p>Mot de Passe : <?= $password; ?></p>
 
     <form>
-        <input type="text" name="Pseudo" id="pseudo">
-        <input type="text" name="Email" id="email">
-        <input type="text" name="Mot de Passe" id="password">
+        <input type="text" name="Pseudo" id="pseudo" placeholder="Pseudonyme">
+        <input type="text" name="Email" id="email" placeholder="Email">
+        <input type="text" name="Mot de Passe" id="password" placeholder="Mot de Passe">
         <input type="submit" name="Envoie du formulaire" id="formsend">
     </form>
 </body>
