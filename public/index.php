@@ -1,32 +1,29 @@
-<?php
-
-    $pseudo = "Flush";
-    $email = "flush@mail.com";
-    $password = "theflusher286";
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Titre</title>
 </head>
 <body>
-    <p>Nom : <?= $pseudo; ?></p>
-    <p>Email : <?= $email; ?></p>
-    <p>Mot de Passe : <?= $password; ?></p>
 
     <form method="post">
-        <input type="text" name="Pseudo" id="pseudo" placeholder="Pseudonyme">
-        <input type="text" name="Email" id="email" placeholder="Email">
-        <input type="text" name="Mot de Passe" id="password" placeholder="Mot de Passe">
-        <input type="submit" name="Envoie du formulaire" id="formsend">
+        <input type="text" name="pseudo" id="pseudo" placeholder="Pseudonyme" required><br/>
+        <input type="text" name="email" id="email" placeholder="Email" required><br/>
+        <input type="text" name="password" id="password" placeholder="Mot de Passe" required><br/>
+        <input type="submit" name="formsend" id="formsend">
     </form>
 
     <?php
     
+        include'config/database.php';
+    
         if(isset($_POST['formsend'])){
-            echo "Formulaire envoyer !";
+            
+            if(!empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['password'])){
+
+                echo "votre pseudo est ".$_POST['pseudo']." et votre email est ".$_POST['email'];                
+
+            }
+
         }
     
     ?>
