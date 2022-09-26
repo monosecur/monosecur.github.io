@@ -36,9 +36,9 @@
                     'email' => $email,
                     'password' => $hashpass
                 ]);
-                setcookie('user_token', $token, time()+(30*24*3600), "/");
                 
-                echo "Votre compte à été créer avec succès token:";
+                
+                echo "Vous pouvez désormais vous connecter.";
 
                 }else{
                     echo "un email existe deja !";

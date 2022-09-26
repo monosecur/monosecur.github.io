@@ -1,59 +1,75 @@
-<?php session_start(); 
-    include 'config/database.php';
-    global $db;
-
-    setcookie('pseudo', 'MyPseudo', time() + (30*24*3600));
-    var_dump($_COOKIE);
-
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Register</title>
-  <link rel="stylesheet" href="CSStyle/style.css">
-  <script src="https://kit.fontawesome.com/a7819a9eea.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="with=device-width, initial-scale=1.0">
+  <title class="indextitle">MonoSecur</title>
+  <link rel="stylesheet" href="CSStyle/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a7819a9eea.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
+  <section class="header">
+    <nav>
+      <a href="index.html"><img src="images/MonoSecurLogoWText.png"></a>
+      
+      <?php
+      echo $_COOKIE['user_token'];
+      //if(isset($_COOKIE['user_token'])){
+        //$q = $db->prepare("SELECT * FROM users WHERE token = :token");
+        //$q->execute(['token' => $_COOKIE['user_token']]);
+        //$result = $q->fetch();
+        //echo "coded";
+        //echo var_dump($_COOKIE['user_token']);
+      //}
+      //if($result == true){
+        //echo "Logged";
+      ?>
+        <!--Enter token-->
+      <?php
+      //}else{
+      ?>
+        <!--<h1>Please Log In</h1>-->
+      <?php
 
-    <h1>Bienvenu sur votre profile</h1>
+      //echo var_dump($_COOKIE['user_token']);
+      //}
+      ?>
 
-    <?php
-        if(isset($_SESSION['email']) && (isset($_SESSION['date'])))
-        {
-            #?>
+      <img src="images/xmark.png" class="phone-logo">
+      <div class="nav-links" id="navLinks">
+        <i class="fa-sharp fa-xmark" onclick="HideMenu()"></i>
+        <ul>
+          <li><a href="register.php">S'identifier</a></li>
+          <li><a href="error404.html">SUPPORT</a></li>
+        </ul>
+      </div>
+      <i class="fa-sharp fa-bars" onclick="ShowMenu()"></i>
+    </nav>
 
-            #<p>Email : <?= $_SESSION['email']; ?></p>
-            #<p>Date de création de votre compte : <?= $_SESSION['date']; ?></p>
+<div class="text-box">
 
-            <?php
-    
-        }else{
-            echo "Veuillez vous connecter à un compte valide.";
-        }
+  <h1>Mono Secur</h1>
+  <p class="index-text">Service Provided by Dark Side.<br>Service proposer par Dark Side.</p>
+  <p class="phone-text">Sorry but this website don't work on you'r web browser or device.<br>désolé mais ce site ne fonctionne pas sur votre navigateur internet ou votre appareil.</p>
+  <a href="https://monolithservers.com" class="hero-btn">Acces to Monolith official website. Acces au site officiel de Monolith.</a>
+</div>
 
-    ?>
+  </section>
 
-    <h1>Login</h1>
-    <form method="post">
-    <input type="email" name="lemail" id="lemail" placeholder="Email" required><br/>
-    <input type="password" name="lpassword" id="lpassword" placeholder="Mot de Passe" required><br/>
-    <input type="submit" name="formlogin" id="formlogin" value="Login">
-    </form>
 
-    <?php include 'config/login.php' ?>
+<!----Javascript for menu buttons---->
+<script>
+    var navLinks = document.getElementById("navLinks")
+  function ShowMenu(){
+    navLinks.style.right = "0";
+  }
+  function HideMenu(){
+    navLinks.style.right = "-200px";
+  }
+</script>
 
-    <h1>register</h1>
-    <form method="post">
-    <input type="email" name="email" id="email" placeholder="Email" required><br/>
-    <input type="password" name="password" id="password" placeholder="Mot de Passe" required><br/>
-    <input type="password" name="cpassword" id="cpassword" placeholder="Confirmer Mot de Passe" required><br/>
-    <input type="submit" name="formsend" id="formsend" value="Register">
-    </form>
-
-    <?php include 'config/register.php'?>
 </body>
 </html>

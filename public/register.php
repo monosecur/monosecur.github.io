@@ -32,16 +32,14 @@
 
             <?php
     
-        }else{
-            echo "Veuillez vous connecter à un compte valide.";
-        }
+        };
 
     ?>
 
 <div class="hero"> 
     <div class="nav-links" id="navLinks">
       <ul>
-        <li><a href="index.html">HOME</a></li>
+        <li><a href="index.php">HOME</a></li>
         <li><a href="error404.html">SUPPORT</a></li>
       </ul>
     </div>
