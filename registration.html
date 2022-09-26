@@ -9,8 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  
-
+  <?php include 'public/index.php' ?>
   <div class="hero"> 
     <div class="nav-links" id="navLinks">
       <ul>
@@ -30,16 +29,16 @@
       </div>
       <form id="login" class="input-group">
         <input type="text" class="input-field" placeholder="User Id">
-        <input type="text" class="input-field" placeholder="Enter Password">
+        <input type="password" class="input-field" placeholder="Enter Password">
         <input type="checkbox" class="check-box"><span>Remember Password</span>
         <button type="submit" class="submit-btn">Login</button>
       </form>
       <form id="register" class="input-group">
-        <input type="text" class="input-field" placeholder="User Id">
-        <input type="email" class="input-field" placeholder="Email Id">
-        <input type="text" class="input-field" placeholder="Enter Password">
-        <input type="checkbox" class="check-box">I agree to<span><a href="">terms of conditions</a></span>
-        <button type="submit" class="submit-btn">Register</button>
+        <input type="email" name="email" id="email" class="input-field" placeholder="Email" required>
+        <input type="password" name="password" id="password" class="input-field" placeholder="Enter Password" required>
+        <input type="password" name="cpassword" id="cpassword" class="input-field" placeholder="Verify Password" required>
+        <input type="checkbox" name="" id="" class="check-box" required>I agree to<span><a href="">terms of conditions</a></span>
+        <button type="submit" name="" id="" class="submit-btn">Register</button>
       </form>
     </div>
   </div>

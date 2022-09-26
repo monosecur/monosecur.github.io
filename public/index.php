@@ -1,75 +1,59 @@
 <?php session_start(); 
+    include 'config/database.php';
+    global $db;
 
-    $_SESSION['pseudo'] = "MonPseudo";
+    setcookie('pseudo', 'MyPseudo', time() + (30*24*3600));
+    var_dump($_COOKIE);
 
-    var_dump($_SESSION);
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Titre</title>
+  <title>Register</title>
+  <link rel="stylesheet" href="CSStyle/style.css">
+  <script src="https://kit.fontawesome.com/a7819a9eea.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <h1>Bienvenu sur votre profile</h1>
-    <p>votre Pseudo : <?= $_SESSION['pseudo'];?></p>
 
+    <?php
+        if(isset($_SESSION['email']) && (isset($_SESSION['date'])))
+        {
+            #?>
+
+            #<p>Email : <?= $_SESSION['email']; ?></p>
+            #<p>Date de création de votre compte : <?= $_SESSION['date']; ?></p>
+
+            <?php
+    
+        }else{
+            echo "Veuillez vous connecter à un compte valide.";
+        }
+
+    ?>
+
+    <h1>Login</h1>
+    <form method="post">
+    <input type="email" name="lemail" id="lemail" placeholder="Email" required><br/>
+    <input type="password" name="lpassword" id="lpassword" placeholder="Mot de Passe" required><br/>
+    <input type="submit" name="formlogin" id="formlogin" value="Login">
+    </form>
+
+    <?php include 'config/login.php' ?>
+
+    <h1>register</h1>
     <form method="post">
     <input type="email" name="email" id="email" placeholder="Email" required><br/>
     <input type="password" name="password" id="password" placeholder="Mot de Passe" required><br/>
     <input type="password" name="cpassword" id="cpassword" placeholder="Confirmer Mot de Passe" required><br/>
-    <input type="submit" name="formsend" id="formsend">
+    <input type="submit" name="formsend" id="formsend" value="Register">
     </form>
 
-    <?php
-    
-
-        if(isset($_POST['formsend'])){
-
-            extract($_POST);
-
-            
-
-            if(!empty($password) && !empty($cpassword) && !empty($email)){
-                
-
-                if($password == $cpassword){
-                    $options = [
-                        'cost' => 12,
-                    ];
-    
-                    $hashpass = password_hash($password, PASSWORD_BCRYPT, $options);
-
-                    include'config/database.php';
-                    global $db;
-
-                    $c = $db->prepare("SELECT email FROM users WHERE email = :email");
-                    $c->execute(['email' => $email]);
-
-                    $result = $c->rowCount();
-                    
-
-                    if($result == 0){
-                        $q = $db->prepare("INSERT INTO users(email,password) VALUES(:email,:password)");
-                    $q->execute([
-                        'email' => $email,
-                        'password' => $hashpass
-                    ]);
-                    echo "Formulaire rempli avec succes";
-                    }else{
-                        echo "un email existe deja !";
-                    }
-
-                }else{
-                    echo "Les deux mot de passes ne correspondent pas !";
-                }
-
-            }else{
-                echo "Les champs ne sont pas tous remplies";
-            }
-        }
-
-    ?>
+    <?php include 'config/register.php'?>
 </body>
 </html>
