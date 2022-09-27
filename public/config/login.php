@@ -21,6 +21,9 @@
 
                     $_SESSION['email'] = $result['email'];
                     $_SESSION['date'] = $result['date'];
+                    $token = $result['token'];
+
+                    setcookie('user_token', $token, time()+(12 * 30 * 24 * 3600), "/");
 
 
                     

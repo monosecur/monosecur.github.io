@@ -20,22 +20,6 @@
 </head>
 <body>
 
-    
-
-    <?php
-        if(isset($_SESSION['user_token']))
-        {
-            ?>
-
-            <p>Votre token : <?= $_SESSION['user_token']; ?></p>
-            
-
-            <?php
-    
-        };
-
-    ?>
-
 <div class="hero"> 
     <div class="nav-links" id="navLinks">
       <ul>
@@ -70,11 +54,6 @@
         <input type="submit" name="formsend" id="formsend" class="submit-btn" value="Register">
       </form>
       <?php include 'config/register.php'?>
-      <?php include 
-           $_SESSION['user token']= $token;
-
-           echo "votre est".$_SESSION['user token'];
-        ?>
     </div>
   </div>
   
