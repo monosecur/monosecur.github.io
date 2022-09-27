@@ -9,7 +9,7 @@
 
         
 
-        if(!empty($password) && !empty($cpassword) && !empty($email)){
+        if(!empty($password) && !empty($cpassword) && !empty($email) && !empty($pseudo)){
             
 
             if($password == $cpassword){
@@ -30,18 +30,29 @@
                 
 
                 if($result == 0){
-                    $q = $db->prepare("INSERT INTO users(token,email,password) VALUES(:token,:email,:password)");
-                $q->execute([
-                    'token' => $token,
-                    'email' => $email,
-                    'password' => $hashpass
-                ]);
-                
-                
-                echo "Vous pouvez désormais vous connecter.";
+
+                    $c = $db->prepare("SELECT email FROM users WHERE pseudo = :pseudo");
+                    $c->execute(['pseudo' => $pseudo]);
+    
+                    $result = $c->rowCount();
+
+                    if($result == 0){
+
+                        $q = $db->prepare("INSERT INTO users(token, pseudo, email,password) VALUES(:token,:pseudo,:email,:password)");
+                        $q->execute([
+                        'token' => $token,
+                        'pseudo' => $pseudo,
+                        'email' => $email,
+                        'password' => $hashpass
+                        ]);
+                        echo "Vous pouvez désormais vous connecter.";
+                    }else{
+                        echo "Ce pseudo est déjà utiliser !";
+                    }
+
 
                 }else{
-                    echo "un email existe deja !";
+                    echo "cet email est déjà utiliser !";
                 }
 
             }else{

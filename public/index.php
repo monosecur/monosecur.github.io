@@ -16,33 +16,34 @@
       <a href="index.html"><img src="images/MonoSecurLogoWText.png"></a>
       
       <?php
-      echo $_COOKIE['user_token'];
-      //if(isset($_COOKIE['user_token'])){
-        //$q = $db->prepare("SELECT * FROM users WHERE token = :token");
-        //$q->execute(['token' => $_COOKIE['user_token']]);
-        //$result = $q->fetch();
-        //echo "coded";
-        //echo var_dump($_COOKIE['user_token']);
-      //}
-      //if($result == true){
-        //echo "Logged";
-      ?>
-        <!--Enter token-->
-      <?php
-      //}else{
-      ?>
-        <!--<h1>Please Log In</h1>-->
-      <?php
 
-      //echo var_dump($_COOKIE['user_token']);
-      //}
+      include 'config/database.php';
+      global $db;
+      
+      if(isset($_COOKIE['user_token'])){
+        $q = $db->prepare("SELECT * FROM users WHERE token = :token");
+        $q->execute(['token' => $_COOKIE['user_token']]);
+        $result = $q->fetch();
+        
+        if($result == true){
+          echo "Bienvenue : ".$result['pseudo'];
+        }else{
+          echo "please Login";
+        }
+
+      }else{
+      echo "please Login";
+
+      }
       ?>
+
+
 
       <img src="images/xmark.png" class="phone-logo">
       <div class="nav-links" id="navLinks">
         <i class="fa-sharp fa-xmark" onclick="HideMenu()"></i>
         <ul>
-          <li><a href="register.php">S'identifier</a></li>
+          <li><a href="registration.php">S'identifier</a></li>
           <li><a href="error404.html">SUPPORT</a></li>
         </ul>
       </div>

@@ -38,7 +38,7 @@
       
       </div>
       <form method="post" id="login" class="input-group">
-        <input type="email" name="lemail" id="lemail" class="input-field" placeholder="User Id">
+        <input type="text" name="ltext" id="ltext" class="input-field" placeholder="Pseudo or email">
         <input type="password" name="lpassword" id="lpassword" class="input-field" placeholder="Enter Password">
         <input type="checkbox" class="check-box"><span>Remember Password</span>
         <button type="submit" name="formlogin" id="formlogin" class="submit-btn">Login</button>
@@ -47,6 +47,7 @@
       <?php include 'config/login.php' ?>
 
       <form method="post" id="register" class="input-group">
+      <input type="text" name="pseudo" id="pseudo" class="input-field" placeholder="Pseudo" required>
         <input type="email" name="email" id="email" class="input-field" placeholder="Email" required>
         <input type="password" name="password" id="password" class="input-field" placeholder="Enter Password" required>
         <input type="password" name="cpassword" id="cpassword" class="input-field" placeholder="Verify Password" required>
