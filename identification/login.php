@@ -39,7 +39,7 @@
                     }else{
                         echo "Mot de Passe invalide !";
                     }}else{
-                        echo "Merci de vérifier votre email ! vérifiez vos spam si vous ne trouvez pas le mail";
+                        echo 'Merci de vérifier votre email ! vérifiez vos spam si vous ne trouvez pas le mail <a href="https://www.monosecur.tk/identification/resendmail>Reenvoyer le mail</a>';
                 };
 
             }else{

@@ -1,9 +1,9 @@
 <?php
 
-    define('HOST', 'sql213.epizy.com');
-    define('DB_NAME','epiz_32620880_MonoSecurDB');
-    define('USER','epiz_32620880');
-    define('PASS','mvBvR65IYoYYa');
+    define('HOST', 'localhost');
+    define('DB_NAME','id19730616_monosecurdb');
+    define('USER','id19730616_monosecuradmin');
+    define('PASS','Gcwe$4Eo+0e8m_11');
 
     try{
         $db = new PDO("mysql:host=" . HOST . ";dbname=" .DB_NAME, USER, PASS);
@@ -13,3 +13,4 @@
     }
 
 ?>
+
