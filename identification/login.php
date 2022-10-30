@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+    include 'identificationcheck.php';
 
     if(isset($_POST['formlogin']))
     {
@@ -14,6 +16,7 @@
             $ismailconfirmed = $result['ismailconfirmed'];
 
 
+
             
 
             
@@ -25,21 +28,22 @@
                     $hashpassword = $result['password'];
                     if(password_verify($lpassword, $hashpassword))
                     {
-
-                        echo "Comtpe trouver connection effectuée.";
                         $token = $result['token'];
-
-                        setcookie('user_token', $token, time()+(12 * 30 * 24 * 3600), '/');
-
-
                         
-
-                        
+                        if(isset($_POST['check-log'])){
+                            setcookie('user_token', $token, time()+(12 * 30 * 24 * 3600), '/');
+                            header("Location: https://monosecur.tk/menu_redirection");
+                            die();
+                        }else{
+                            $_SESSION['user_token'] = $token;
+                            header("Location: https://monosecur.tk/menu_redirection");
+                            die();
+                        }
 
                     }else{
                         echo "Mot de Passe invalide !";
                     }}else{
-                        echo 'Merci de vérifier votre email ! vérifiez vos spam si vous ne trouvez pas le mail <a href="https://www.monosecur.tk/identification/resendmail>Reenvoyer le mail</a>';
+                        echo 'Merci de vérifier votre email ! vérifiez vos spam si vous ne trouvez pas le mail. <a href="https://monosecur.tk/identification/renvoyermail">Renvoyer le mail</a>';
                 };
 
             }else{
@@ -48,26 +52,33 @@
                 $result = $q->fetch();
                 $ismailconfirmed = $result['ismailconfirmed'];
 
-                if($ismailconfirmed == 1) {        
-                    if($result == true){
-
-                        echo "Comtpe trouver connection effectuée.";
-
+                if($result == true) {
+                    if($ismailconfirmed == 1){
 
                         $token = $result['token'];
-
-                        setcookie('user_token', $token, time()+(12 * 30 * 24 * 3600), '/');
+                        
+                        if(isset($_POST['check-log'])){
+                            setcookie('user_token', $token, time()+(12 * 30 * 24 * 3600), '/');
+                            header("Location: https://monosecur.tk/menu_redirection");
+                            die();
+                        }else{
+                            $_SESSION['user_token'] = $token;
+                            header("Location: https://monosecur.tk/menu_redirection");
+                            die();
+                        }
 
                     }else{
-                        echo "Cet email ou pseudo n'a jamais été utiliser !";
+                        echo 'Merci de vérifier votre email ! vérifiez vos spam si vous ne trouvez pas le mail. <a href="https://monosecur.tk/identification/renvoyermail">Renvoyer le mail</a>';
                     }}else{
-                        echo "Merci de vérifier votre email ! vérifiez vos spam si vous ne trouvez pas le mail";
-                };
+                        echo "Cet email ou pseudo n'a jamais été utiliser !";
+                }
             }
 
         }else{
             echo "Email ou Mot de Passe manquant !";
         }
+    }else{
+
     }
 
 ?>

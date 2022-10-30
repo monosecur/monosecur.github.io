@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="with=device-width, initial-scale=1.0">
-  <title class="indextitle">MonoSecur</title>
+  <title class="indextitle">Mono Secur</title>
   <link rel="stylesheet" href="CSStyle/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -14,36 +14,11 @@
   <section class="header">
     <nav>
       <a href="index.html"><img src="images/MonoSecurLogoWText.png"></a>
-      
-      <?php
-
-      include 'config/database.php';
-      global $db;
-      
-      if(isset($_COOKIE['user_token'])){
-        $q = $db->prepare("SELECT * FROM users WHERE token = :token");
-        $q->execute(['token' => $_COOKIE['user_token']]);
-        $result = $q->fetch();
-        
-        if($result == true){
-          echo "Bienvenue : ".$result['pseudo'];
-        }else{
-          echo "please Login";
-        }
-
-      }else{
-      echo "please Login";
-
-      }
-      ?>
-
-
-
       <img src="images/xmark.png" class="phone-logo">
       <div class="nav-links" id="navLinks">
         <i class="fa-sharp fa-xmark" onclick="HideMenu()"></i>
         <ul>
-          <li><a href="http://www.monosecur.tk/identification/enregistration">S'identifier</a></li>
+          <li><a href="https://monosecur.tk/identification/connexion">Se connecter</a></li>
           <li><a href="error404.html">SUPPORT</a></li>
         </ul>
       </div>

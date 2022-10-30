@@ -1,18 +1,14 @@
-<?php session_start(); 
+<?php if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
     include ($_SERVER['DOCUMENT_ROOT']."/config/database.php");
     global $db;
-
-    
-
-
-    
-
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Register</title>
-  <link rel="stylesheet" href="http://www.monosecur.tk/CSStyle/identification.css">
+  <title>Mono Secur</title>
+  <link rel="stylesheet" href="http://monosecur.tk/CSStyle/identification/connexion.css">
   <script src="https://kit.fontawesome.com/a7819a9eea.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -21,28 +17,31 @@
 <body>
 
 <div class="hero"> 
-    <div class="nav-links" id="navLinks">
-      <ul>
-        <li><a href="login_menu">MENU PRINCIPALE</a></li>
-        <li><a href="error404.html">SUPPORT</a></li>
-      </ul>
-    </div>
-    <a href="index.html"><img src="images/MonoSecurLogoWText.png"></a>
-    <div class="form-box">
-      <div class="button-box">
-        <div id="btn"></div>
-        <button type="button" class="toggle-btn">Log In</button>
+    <nav>
+      <a href="https://monosecur.tk"><img src="https://monosecur.tk/images/MonoSecurLogoWText.png"></a>
+
+      <div class="nav-links" id="navLinks">
+        <ul>
+          <li><a href="https://monosecur.tk/menu_redirection">Menu Principal</a></li>
+          <li><a href="error404.html">SUPPORT</a></li>
+        </ul>
       </div>
+    </nav>
+    <div class="form-box">
+
+      <button type="button" class="toggle-btn">Connexion</button>
+
 
       <form method="post" id="login" class="input-group">
-        <input type="text" name="ltext" id="ltext" class="input-field" placeholder="Pseudo or email">
-        <input type="password" name="lpassword" id="lpassword" class="input-field" placeholder="Enter Password">
-        <input type="checkbox" class="check-box"><span>Remember Password</span>
-        <button type="submit" name="formlogin" id="formlogin" class="submit-btn">Login</button>
+        <input type="text" name="ltext" id="ltext" class="input-field" placeholder="Pseudo ou email" required>
+        <input type="password" name="lpassword" id="lpassword" class="input-field" placeholder="mot de passe" required>
+        <input type="checkbox" id="check-log" name="check-log" placeholder="Rester Connecter">Rester Connecter</input>
+        <button type="submit" name="formlogin" id="formlogin" class="submit-btn">Se connecter</button>
       </form>
 
       <?php include 'login.php' ?>
     </div>
+    <a class="log-btn" href="https://monosecur.tk/identification/enregistration">S'enregistrer</a>
   </div>
 </body>
 </html>

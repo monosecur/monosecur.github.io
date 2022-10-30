@@ -1,18 +1,14 @@
-<?php session_start(); 
+<?php if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
     include ($_SERVER['DOCUMENT_ROOT']."/config/database.php");
     global $db;
-
-    
-
-
-    
-
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Register</title>
-  <link rel="stylesheet" href="http://www.monosecur.tk/CSStyle/identification.css">
+  <title>Mono Secur</title>
+  <link rel="stylesheet" href="//monosecur.tk/CSStyle/identification/enregistration.css">
   <script src="https://kit.fontawesome.com/a7819a9eea.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -20,19 +16,20 @@
 </head>
 <body>
 
-<div class="hero"> 
-    <div class="nav-links" id="navLinks">
-      <ul>
-        <li><a href="login_menu">MENU PRINCIPALE</a></li>
-        <li><a href="error404.html">SUPPORT</a></li>
-      </ul>
-    </div>
-    <a href="index.html"><img src="images/MonoSecurLogoWText.png"></a>
-    <div class="form-box">
-      <div class="button-box">
-        <div id="btn"></div>
-        <button type="button" class="toggle-btn">Enregistration</button>
+  <div class="hero"> 
+    <nav>
+      <a href="https://www.monosecur.tk"><img src="https://monosecur.tk/images/MonoSecurLogoWText.png"></a>
+
+      <div class="nav-links" id="navLinks">
+        <ul>
+          <li><a href="https://monosecur.tk/menu_redirection">Menu Principal</a></li>
+          <li><a href="error404.html">SUPPORT</a></li>
+        </ul>
       </div>
+    </nav>
+    <div class="form-box">
+
+        <button type="button" class="toggle-btn">Enregistration</button>
 
       <form method="post" id="register" class="input-group">
       <input type="text" name="pseudo" id="pseudo" class="input-field" placeholder="Pseudo" required>
@@ -45,7 +42,7 @@
 
       <?php include 'register.php'?>
     </div>
+    <a class="log-btn" href="http://monosecur.tk/identification/connexion">Se connecter</a>
   </div>
-  <a href="http://monosecur.tk/identification/connexion">Ce connecter</a>
 </body>
 </html>

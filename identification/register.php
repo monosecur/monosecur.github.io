@@ -1,5 +1,6 @@
 <?php
-    
+
+    include 'identificationcheck.php';
 
     if(isset($_POST['formsend'])){
 
@@ -7,7 +8,7 @@
 
         
 
-        if(!empty($password) && !empty($cpassword) && !empty($email) && !empty($pseudo)){
+        if(!empty($password) || !empty($cpassword) && !empty($email) && !empty($pseudo)){
             
 
             if($password == $cpassword){
@@ -55,8 +56,9 @@
                         <html>
                             <body>
                                 <div align="center">
-                                    <a href="www.monosecur.tk/public/config/confirmation.php?pseudo='.urlencode($pseudo).'&mailconfirmkey='.$mailconfirmkey.'">Confirmez votre compte !</a>
-                                </div>
+                                    <a href="https://monosecur.tk/identification/confirmation?email='.urlencode($email).'&mailconfirmkey='.$mailconfirmkey.'">Confirmez votre compte !</a>
+                                    <a href="https://monosecur.tk/identification/annuler?email='.urlencode($email).'&mailconfirmkey='.$mailconfirmkey.'">Je ne suis pas à l origine de cette requete</a>
+                                    </div>
 
                             </body>
                         </html>
@@ -64,8 +66,8 @@
 
                         mail($email, "confirmation de compte", $message, $header);
 
-                        
-                        echo "Nous avons envoyer un mail à ".$email.", merci de confirmer votre email pour vous connecter !";
+                        header("Location: https://monosecur.tk/identification/connexion");
+                        die();
                         
                     }else{
                         echo "Ce pseudo est déjà utiliser !";
@@ -84,5 +86,6 @@
             echo "Les champs ne sont pas tous remplies";
         }
     }
+
 
 ?>
