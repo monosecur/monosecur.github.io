@@ -18,8 +18,15 @@
                     $updateuser = $db->prepare("UPDATE users SET ismailconfirmed = 1 WHERE email = ? AND mailconfirmkey = ?");
                     $updateuser->execute(array($email,$mailconfirmkey));
                     $token = $user['token'];
-                    $c = $db->prepare("INSERT INTO token(token) VALUES(:token)");
-                    $c->execute(['token' => $token]);
+                    $encryptedpseudo = $user['pseudo'];
+                    $decriptedpseudo = substr($encryptedpseudo, 11);
+                    $pseudo = (hex2bin($decriptedpseudo));
+                    $id = $user['id'];
+                    $c = $db->prepare("INSERT INTO token(token,id,pseudo,last_time) VALUES(:token, :id, :pseudo, :last_time)");
+                    $c->execute(['token' => $token,
+                                     'id' => $id,
+                                        'pseudo' => $pseudo,
+                                            'last_time' => date("U")]);
                     echo "Votre compte a été comfirmé avec succès !";
                     header("Location: https://monosecur.tk/identification/connexion");
                     die();

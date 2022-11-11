@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9734489296512588" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +22,7 @@
       <div class="nav-links" id="navLinks">
         <ul>
           <li><a href="https://monosecur.tk/menu_redirection">Menu Principal</a></li>
+          <li><a href="https://monosecur.tk/parametres">Paramètres</a></li>
           <li><a href="error404.html">SUPPORT</a></li>
         </ul>
       </div>

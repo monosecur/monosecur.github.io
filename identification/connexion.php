@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9734489296512588" crossorigin="anonymous"></script>
   <title>Mono Secur</title>
   <link rel="stylesheet" href="http://monosecur.tk/CSStyle/identification/connexion.css">
   <script src="https://kit.fontawesome.com/a7819a9eea.js" crossorigin="anonymous"></script>

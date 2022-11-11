@@ -20,6 +20,7 @@
                 
                 $token = bin2hex(random_bytes(8));
                 $mailconfirmkey = bin2hex(random_bytes(5));
+                $encryptedpseudo = bin2hex(random_bytes(5)).'_'.bin2hex($pseudo);
 
                 
 
@@ -41,14 +42,14 @@
                         $q = $db->prepare("INSERT INTO users(token, pseudo, email, mailconfirmkey, password) VALUES(:token,:pseudo,:email,:mailconfirmkey,:password)");
                         $q->execute([
                         'token' => $token,
-                        'pseudo' => $pseudo,
+                        'pseudo' => $encryptedpseudo,
                         'email' => $email,
                         'mailconfirmkey' => $mailconfirmkey,
                         'password' => $hashpass
                         ]);
 
                         $header="MIME-Version: 1.0\r\n";
-                        $header.='From:"MonoSecur.tk"<Monosecur@no-reply.fr>'."\n";
+                        $header.='From:"MonoSecur.tk"<no-reply@monosecur.tk>'."\n";
                         $header.='Content-Type:text/html; charset="uft-8"'."\n";
                         $header.='Content-Transfert-Encoding: 8bits';
 

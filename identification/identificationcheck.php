@@ -20,7 +20,7 @@
                 $result = $q->fetch();
 
                 if ($result == true){
-                header("Location: https://monosecur.tk/identification/deconnexion");
+                header("Location: https://www.monosecur.tk/identification/deconnexion");
                 die();  }else{
                     setcookie('user_token', null, time()-(12 * 30 * 24 * 3600), '/');
                 }
@@ -33,7 +33,7 @@
             $result = $q->fetch();
 
             if ($result == true){
-            header("Location: https://monosecur.tk/identification/deconnexion");
+            header("Location: https://www.monosecur.tk/identification/deconnexion");
             die();  }else{
                 session_destroy();
             }

@@ -7,11 +7,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9734489296512588" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://monosecur.tk/CSStyle/identification/annuler.css">
-    <title>Renvoyer Mail</title>
+    <title>Mono Secur</title>
 </head>
 <body>
 <div class="hero">

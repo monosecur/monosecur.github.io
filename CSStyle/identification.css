@@ -59,7 +59,7 @@ nav img{
     position: relative;
     margin: 6% auto;
     background: #CAEEC2;
-    border: 0;
+    border: 0 solid blueviolet;
     padding: 5px;
     overflow: hidden;
     border-radius: 30px;
@@ -68,7 +68,6 @@ nav img{
 }
 .form-box:hover{
     border: 5px solid blueviolet;
-    transition: 0.5s;
 }
 
 .button-box{
