@@ -15,6 +15,14 @@
                 $delete = $db->prepare("DELETE FROM users WHERE email = ? AND mailconfirmkey = ?");
                 $delete->execute(array($email,$mailconfirmkey));
                 echo("le compte associé à l'adresse ".$email." a été annuler avec succès !");
+
+                $l = $db->prepare("INSERT INTO logs(type, arg1, arg2) VALUES(:type, :arg1, :arg2)");
+                $l->execute([
+                'type' => 'account_canceled',
+                'arg1' => $user['id'],
+                'arg2' => $user['id']
+                ]);
+
                 }else{echo"Le compte associé à l'adresse ".$email." à déjà été validé !Si vous n'êtes pas à l'origine de cette validation contactez le support.";}
             }else{echo("Cette email n'a jamais été utiliser !");}
         }else{echo("voir avec le support code d'erreur #ACDC1");}

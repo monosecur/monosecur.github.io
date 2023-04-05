@@ -9,7 +9,7 @@
 .hero{
     height: 100%;
     width: 100%;
-    background-color: rgba(4,9,30,0.7);
+    background-color: #030615;
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -58,7 +58,7 @@ nav img{
     height: 480px;
     position: relative;
     margin: 6% auto;
-    background: #CAEEC2;
+    background: #810311;
     border: 0;
     padding: 5px;
     overflow: hidden;
@@ -67,7 +67,7 @@ nav img{
     transition: 0.5s;
 }
 .form-box:hover{
-    border: 5px solid blueviolet;
+    border: 5px solid white;
     transition: 0.5s;
 }
 
@@ -82,7 +82,7 @@ nav img{
     align-items: center;
     margin: 10% 35% 10% 30%;
     padding: 10px;
-    background-color: blueviolet;
+    background-color: #ba0319;
     border-radius: 10px;
     position: static;
     border: 0;
@@ -105,6 +105,7 @@ nav img{
     border-bottom: 1px solid #999;
     outline: none;
     background: transparent;
+    color: white;
 }
 .submit-btn{
     width: 85%;
@@ -112,7 +113,7 @@ nav img{
     cursor: pointer;
     display: block;
     margin: auto;
-    background-color: blueviolet;
+    background-color: #ba0319;
     border: 0;
     outline: none;
     border-radius: 30px;
@@ -127,7 +128,7 @@ nav img{
     margin: 6% auto;
     justify-content: center;
     align-items: center;
-    background-color: blueviolet;
+    background-color: #810311;
     padding: 20px;
     border: 0;
     width: 300px;
@@ -138,7 +139,7 @@ nav img{
     color: black;
 }
 .log-btn:hover{
-    border: 5px solid #CAEEC2;
+    border: 5px solid #eef52c;
 }
 
 .check-box{
@@ -155,4 +156,9 @@ nav img{
 }
 #register{
     left: 50px;
+}
+
+.term{
+    color:white;
+    
 }

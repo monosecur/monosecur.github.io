@@ -25,7 +25,7 @@ function decreaseTimeValue() {
   var minutes = parseInt(document.getElementById('minute').value, 10);
   var hour = parseInt(document.getElementById('hour').value, 10);
   minutes = isNaN(minutes) ? 0 : minutes;
-  if(minutes < 20 && !(hour<1)){
+  if(minutes < 10 && !(hour<1)){
       hour = hour - 1;
       minutes = 50;
   }else{

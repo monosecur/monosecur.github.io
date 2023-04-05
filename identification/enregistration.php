@@ -37,7 +37,7 @@
         <input type="email" name="email" id="email" class="input-field" placeholder="Email" required>
         <input type="password" name="password" id="password" class="input-field" placeholder="Mot de Passe" required>
         <input type="password" name="cpassword" id="cpassword" class="input-field" placeholder="Vérifier Mot de Passe" required>
-        <input type="checkbox" name="" id="" class="check-box" required>j'accepte les <span><a href="">terms de conditions</a></span>
+        <input type="checkbox" name="" id="" class="check-box" required>j'accepte les <span><br><a class="term" href="">terms de conditions</a></span>
         <input type="submit" name="formsend" id="formsend" class="submit-btn" value="Créer un compte">
       </form>
 

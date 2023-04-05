@@ -1,6 +1,7 @@
 <?php session_start(); 
     include ($_SERVER['DOCUMENT_ROOT']."/config/database.php");
     global $db;
+    include ($_SERVER['DOCUMENT_ROOT']."/config/updateuser.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,15 +18,17 @@
 </head>
 <body>
 
+
+
 <div class="hero"> 
     <nav>
       <a href="https://www.monosecur.tk"><img src="https://monosecur.tk/images/MonoSecurLogoWText.png"></a>
 
       <div class="nav-links" id="navLinks">
         <ul>
-            <li><a href="https://monosecur.tk/menuprincipal">Menu Principal</a></li>
-            <li><a href="https://monosecur.tk/parametres">Paramètres</a></li>
-            <li><a href="error404.html">SUPPORT</a></li>
+              <li><a href="https://monosecur.tk/menuprincipal">Menu Principal</a></li>
+              <li><a href="https://monosecur.tk/parametres">Paramètres</a></li>
+              <li><a href="error404.html">SUPPORT</a></li>
         </ul>
       </div>
     </nav>
@@ -43,15 +46,13 @@
         <div class="value-button" id="increasetime" onclick="increaseTimeValue()" value="Increase Value">+</div>
         <script src="https://monosecur.tk/JScript/operator-time.js"></script>
       </div>
+      <input type="number" id="result" value="0" disabled/>
       <script>
          setInterval('refresh_result()', 1000);
         function refresh_result(){
-                $('.list').load('https://monosecur.tk/JScript/refresh-result.js');
+                $('#result').load('https://monosecur.tk/JScript/refresh-result.php');
         }
       </script>
-      <input type="number" id="result" value="0" disabled/>
-      
-
     </div>
 </div>
 </body>

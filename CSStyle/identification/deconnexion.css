@@ -9,7 +9,7 @@
 .hero{
     height: 100%;
     width: 100%;
-    background-color: rgba(4,9,30,0.7);
+    background-color: #030615;
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -58,7 +58,7 @@ nav img{
     height: 480px;
     position: relative;
     margin: 6% auto;
-    background: #CAEEC2;
+    background: #810311;
     border: 0;
     padding: 5px;
     overflow: hidden;
@@ -67,7 +67,7 @@ nav img{
     transition: 0.5s;
 }
 .form-box:hover{
-    border: 5px solid blueviolet;
+    border: 5px solid white;
     transition: 0.5s;
 }
 
@@ -82,12 +82,12 @@ nav img{
     align-items: center;
     margin: 10% 35% 10% 30%;
     padding: 10px;
-    background-color: blueviolet;
+    background-color: #ba0319;
     border-radius: 10px;
     position: static;
     border: 0;
     outline: none;
-    font-size: 12px;
+    font-size: 20px;
 }
 .input-group{
     margin: 20% 10%;
@@ -113,10 +113,11 @@ nav img{
     cursor: pointer;
     display: block;
     margin: 20% auto;
-    background-color: blueviolet;
+    background-color: #ba0319;
     border: 0;
     outline: none;
     border-radius: 30px;
+    font-size: 20px;
 }
 .log-btn{
     position: relative;

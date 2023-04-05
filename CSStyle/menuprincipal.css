@@ -9,7 +9,7 @@
 .hero{
     height: 100%;
     width: 100%;
-    background-color: rgba(4,9,30,0.7);
+    background-color: #030615;
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -37,7 +37,7 @@ nav img{
 .nav-links ul li a{
     color: #fff;
     text-decoration: none;
-    font-size: 13px;    
+    font-size: 13px;        
 }
 .nav-links ul li::after{
     content: '';
@@ -58,24 +58,48 @@ nav img{
     height: auto;
     position: inherit;
     margin: 25% 1%;
-    background: #CAEEC2;
-    border: 5px solid blueviolet;
+    background: #810311;
+    border: 5px solid #aaa;
     padding: 100px;
     overflow: hidden;
     border-radius: 30px;
     top: -100px;
     transition: 0.5s;
 }
+.check-session{
+    margin: auto;
+}
+.users-count{
+    width: 10%;
+    height: auto;
+    position: inherit;
+    margin: 25% 70%;
+    background: #810311;
+    border: 5px solid white;
+    padding: 100px;
+    overflow: hidden;
+    border-radius: 30px;
+    top: -100px;
+    transition: 0.5s;
+}
+
 .account-txt{
     width: 200px;
     margin : 10% auto;
     list-style-type: none;
 }
+
+.user-txt{
+    width: 200px;
+    margin : 10% auto;
+    list-style-type: none;
+}
+
 .rea-btn{
     display: inline;
     text-decoration: none;
     color: black;
-    border: 1px solid blueviolet;
+    border: 1px solid #eef52c;
     padding: 12px 34px;
     font-size: 13px;
     background: transparent;
@@ -84,7 +108,7 @@ nav img{
     transition: 0.5s;
 }
 .rea-btn:hover{
-    background: blueviolet;
+    background: #eef52c;
 }
 
 .list{
@@ -94,7 +118,7 @@ nav img{
     align-items: center;
     margin: 7% 33%;
     padding: 10px;
-    background-color: #CAEEC2;
+    background-color: #AAAAAA;
     border-radius: 10px;
     position: static;
     border: 0;
@@ -117,7 +141,7 @@ nav img{
     align-items: center;
     margin: 1% auto;
     padding: 10px;
-    background-color: blueviolet;
+    background-color: #276629;
     border-radius: 10px;
     position: static;
     border: 0;
@@ -127,11 +151,11 @@ nav img{
     transition: .5s;
 }
 .item:hover{
-    background-color: rgb(82, 43, 187);
+    background-color: #1d4d1e;
     cursor: pointer;
 }
 .item:active{
-    background-color: rgb(22, 20, 161);
+    background-color: #318033;
 }
 
 .important-item{
@@ -141,7 +165,7 @@ nav img{
     align-items: center;
     margin: 1% auto;
     padding: 10px;
-    background-color: rgb(180, 20, 20);
+    background-color: #ae0416;
     border-radius: 10px;
     position: static;
     border: 0;
@@ -151,11 +175,11 @@ nav img{
     transition: .5s;
 }
 .important-item:hover{
-    background-color: orange;
+    background-color: #8b0312;
     cursor: pointer;
 }
 .important-item:active{
-    background-color: yellow;
+    background-color: #d1041b;
 }
 
 .form-box{
