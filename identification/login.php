@@ -68,6 +68,9 @@
 
                 if($result == true) {
                     if($ismailconfirmed == 1){
+                        $hashpassword = $result['password'];
+                    if(password_verify($lpassword, $hashpassword))
+                    {
 
                         $token = $result['token'];
                         
@@ -100,6 +103,8 @@
                         }
 
                     }else{
+                        echo "Mot de Passe invalide !";
+                    }}else{
                         echo 'Merci de vérifier votre email ! vérifiez vos spam si vous ne trouvez pas le mail. <a href="https://monosecur.tk/identification/renvoyermail">Renvoyer le mail</a>';
                     }}else{
                         echo "Cet email ou pseudo n'a jamais été utiliser !";
