@@ -31,6 +31,8 @@
                         $token = $result['token'];
                         
                         if(isset($_POST['check-log'])){
+                            $setid = $db->prepare("UPDATE token SET user_session_id = ? WHERE token = ?");
+                            $setid->execute(array(session_id(), $token));
                             setcookie('user_token', $token, time()+(12 * 30 * 24 * 3600), '/');
 
                             $l = $db->prepare("INSERT INTO logs(type, arg1) VALUES(:type, :arg1)");
