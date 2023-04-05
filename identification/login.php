@@ -98,7 +98,7 @@
                             'arg1' => $result['id']
                             ]);
 
-                            header("Location: https://monosecur.tk/menu_redirection");
+                            header("Location: https://monosecur.tk/menu_redirection")
                             die();
                         }
 
