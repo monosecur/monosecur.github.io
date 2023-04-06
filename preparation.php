@@ -7,13 +7,6 @@
     <title>Mono Secur</title>
 </head>
 <body>
-
-    <iframe src="https://monosecur.tk/audio/preparing-mission-loading.mp3" type="audio/mp3" allow="autoplay" id="audio" style="display:none"></iframe>
-
-    <audio autoplay controls> 
-        <source src="https://monosecur.tk/audio/preparing-mission-loading.mp3" type="audio/mp3">
-        if you see this something went wrong..
-    </audio>
-
+    <!-- Your HTML content goes here -->
 </body>
 </html>
