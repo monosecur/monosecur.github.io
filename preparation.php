@@ -6,7 +6,5 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mono Secur</title>
 </head>
-<body>
-    <!-- Your HTML content goes here -->
 </body>
 </html>
