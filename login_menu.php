@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9734489296512588" crossorigin="anonymous"></script>
-  <meta name="viewport" content="with=device-width, initial-scale=1.0">
-  <title class="indextitle">Mono Secur</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mono Secur</title>
   <link rel="stylesheet" href="CSStyle/login_menu.css">
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a7819a9eea.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <style>
+    /* Add your custom styles here */
+  </style>
 </head>
 <body>
   <section class="header">
@@ -27,8 +29,8 @@
     </nav>
     <div class="text-box">
       <h1>Mono Secur</h1>
-      <p class="index-text">Ce site est entierement une fiction créer pour un serveur d'un jeux vidéo,<br>pour plus d'information cliquez sur le lien ci-dessous :</p>
-      <p class="phone-text">Sorry but this website don't work on you'r web browser or device.<br>désolé mais ce site ne fonctionne pas sur votre navigateur internet ou votre appareil.</p>
+      <p class="index-text">Ce site est entièrement une fiction créée pour un serveur d'un jeu vidéo,<br>pour plus d'information cliquez sur le lien ci-dessous :</p>
+      <p class="phone-text">Sorry but this website doesn't work on your web browser or device.<br>désolé mais ce site ne fonctionne pas sur votre navigateur internet ou votre appareil.</p>
       <a href="https://monolithservers.fr" target="_blank" class="hero-btn">Accéder au site officiel de Monolith.</a>
     </div>
   </section>
